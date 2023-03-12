@@ -14,6 +14,9 @@ interface BudgetRepository {
     fun getAmountBudget(): LiveData<List<AmountData>>
 
 
+    fun updata(name:String,amount:String,id:Int)
+
+
 
 
 }

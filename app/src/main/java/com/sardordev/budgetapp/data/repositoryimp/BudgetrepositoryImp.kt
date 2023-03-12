@@ -19,4 +19,10 @@ class BudgetrepositoryImp(private val dao: BudgetDao) : BudgetRepository {
         return dao.getAmounBudget()
     }
 
+
+
+    override fun updata(name:String,amount:String,id:Int) {
+        dao.update(name,amount,id)
+    }
+
 }

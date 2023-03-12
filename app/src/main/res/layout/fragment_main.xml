@@ -25,22 +25,28 @@
         android:gravity="center_vertical"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnbudget"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="45dp"
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:text="Budget"
+            android:textColor="@color/white"
+            android:background="#7C5A50"
             />
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnexpense"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="45dp"
             android:layout_margin="5dp"
+            android:background="#7C5A50"
             android:layout_weight="1"
+            android:textColor="@color/white"
             android:text="Expense"
             />
+
+
 
 
     </LinearLayout>

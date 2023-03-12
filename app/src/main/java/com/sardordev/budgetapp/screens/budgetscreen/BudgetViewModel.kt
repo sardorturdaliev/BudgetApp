@@ -21,6 +21,10 @@ class BudgetViewModel() : ViewModel() {
     }
 
 
+    fun update(name:String,amount:String,id:Int) {
+        budgetrepositoryImp.updata(name,amount,id)
+    }
+
 
 
 }

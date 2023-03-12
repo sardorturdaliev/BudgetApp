@@ -8,13 +8,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sardordev.budgetapp.data.model.BudgetEntity
 import com.sardordev.budgetapp.databinding.ItemCardBinding
 
-class BudgetAdapter : ListAdapter<BudgetEntity, BudgetAdapter.Holder>(diff) {
+class BudgetAdapter(val listener: ClickListenerItem) :
+    ListAdapter<BudgetEntity, BudgetAdapter.Holder>(diff) {
 
-    class Holder(val view: ItemCardBinding) : RecyclerView.ViewHolder(view.root) {
+    inner class Holder(val view: ItemCardBinding) : RecyclerView.ViewHolder(view.root) {
 
         fun onbind(budgetEntity: BudgetEntity) {
             view.tvbudgetname.text = budgetEntity.categoryName
             view.tvBudgetSum.text = budgetEntity.amountBudgets.toString()
+
+            itemView.setOnClickListener {
+                listener.clickItem(budgetEntity)
+            }
+
         }
     }
 
@@ -34,6 +40,14 @@ class BudgetAdapter : ListAdapter<BudgetEntity, BudgetAdapter.Holder>(diff) {
         override fun areContentsTheSame(oldItem: BudgetEntity, newItem: BudgetEntity): Boolean {
             return oldItem == newItem
         }
+    }
+
+
+    interface ClickListenerItem {
+
+        fun clickItem(budgetEntity: BudgetEntity)
+
+
     }
 
 

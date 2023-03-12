@@ -9,5 +9,5 @@ data class BudgetEntity(
     @ColumnInfo(name = "categoryname")
     val categoryName: String,
     @ColumnInfo(name = "amountbudget")
-    val amountBudgets: Float
+    val amountBudgets: Int
 )

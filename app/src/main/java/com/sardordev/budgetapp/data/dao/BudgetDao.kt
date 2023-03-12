@@ -1,10 +1,7 @@
 package com.sardordev.budgetapp.data.dao
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Ignore
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 import com.sardordev.budgetapp.data.model.AmountData
 import com.sardordev.budgetapp.data.model.BudgetEntity
 
@@ -20,6 +17,10 @@ interface BudgetDao {
 
     @Query("select amountbudget from budgettable")
     fun getAmounBudget(): LiveData<List<AmountData>>
+
+
+    @Query("update budgettable set  categoryname = :name , amountbudget = :amount  where id  = :id ")
+    fun update(name:String,amount:String,id:Int)
 
 
 }

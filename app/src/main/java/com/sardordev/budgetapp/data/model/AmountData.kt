@@ -5,5 +5,5 @@ import androidx.room.ColumnInfo
 
 data class AmountData(
     @ColumnInfo(name = "amountbudget")
-    val amountBudgets: Int
+    val amountBudgets: Float
 )
